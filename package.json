@@ -1,6 +1,6 @@
 {
   "name": "express-transform-bare-module-specifiers",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Express middleware to transform bare module specifiers on-the-fly.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nodecg/express-transform-bare-module-specifiers.git"
+    "url": "git+https://github.com/TreZc0/express-transform-bare-module-specifiers.git"
   },
   "keywords": [
     "express",
@@ -28,9 +28,9 @@
   "author": "Alex Van Camp <email@alexvan.camp>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nodecg/express-transform-bare-module-specifiers/issues"
+    "url": "https://github.com/TreZc0/express-transform-bare-module-specifiers/issues"
   },
-  "homepage": "https://github.com/nodecg/express-transform-bare-module-specifiers#readme",
+  "homepage": "https://github.com/TreZc0/express-transform-bare-module-specifiers#readme",
   "devDependencies": {
     "@types/babel__core": "^7.1.6",
     "@types/content-type": "^1.1.2",
