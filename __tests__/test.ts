@@ -18,13 +18,13 @@ const defaultMiddleware = transformMiddleware();
 const BYPASS_DEFAULT_TEST_TRANSFORM = 'test-no-default-transform';
 app.use('/node_modules', express.static('node_modules'));
 
-const EXPRESS_EXPECTED = `import * as express from "/node_modules/express/index.js";`;
+const EXPRESS_EXPECTED = 'import * as express from "/node_modules/express/index.js";';
 
-const SENDFILE_EXPECTED = `import * as express from "/node_modules/express/index.js";`;
+const SENDFILE_EXPECTED = 'import * as express from "/node_modules/express/index.js";';
 
-const NOOP_EXPECTED = `import * as noop from "../../node_modules/noop3/index.js";`;
+const NOOP_EXPECTED = 'import * as noop from "../../node_modules/noop3/index.js";';
 
-const BABEL_EXPECTED = `import * as babel from "/node_modules/@babel/core/lib/index.js";`;
+const BABEL_EXPECTED = 'import * as babel from "/node_modules/@babel/core/lib/index.js";';
 
 beforeAll(async done => {
 	app.use('*', (req, res, next) => {
