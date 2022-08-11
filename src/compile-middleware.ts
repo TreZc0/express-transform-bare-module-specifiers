@@ -67,8 +67,7 @@ export function babelCompile(
 							modulesDir: modulesUrl,
 							rootBaseDir: rootDir
 						}]
-					],
-					sourceMaps: 'inline'
+					]
 				});
 				if (result && result.code) {
 					transformed = result.code;
