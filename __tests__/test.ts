@@ -18,17 +18,13 @@ const defaultMiddleware = transformMiddleware();
 const BYPASS_DEFAULT_TEST_TRANSFORM = 'test-no-default-transform';
 app.use('/node_modules', express.static('node_modules'));
 
-const EXPRESS_EXPECTED = `import * as express from "/node_modules/express/index.js";
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuc2NvcGVkLW5wbS1wYWNrYWdlIl0sIm5hbWVzIjpbImV4cHJlc3MiXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sS0FBS0EsT0FBWixNQUF5QixnQ0FBekIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBleHByZXNzIGZyb20gJ2V4cHJlc3MnIl19`;
+const EXPRESS_EXPECTED = `import * as express from "/node_modules/express/index.js";`;
 
-const SENDFILE_EXPECTED = `import * as express from "/node_modules/express/index.js";
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlbmQtZmlsZSJdLCJuYW1lcyI6WyJleHByZXNzIl0sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEtBQUtBLE9BQVosTUFBeUIsZ0NBQXpCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgZXhwcmVzcyBmcm9tICdleHByZXNzJ1xuXG4iXX0=`;
+const SENDFILE_EXPECTED = `import * as express from "/node_modules/express/index.js";`;
 
-const NOOP_EXPECTED = `import * as noop from "../../node_modules/noop3/index.js";
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNvbWUtZWxlbWVudC5qcyJdLCJuYW1lcyI6WyJub29wIl0sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEtBQUtBLElBQVosTUFBc0IsbUNBQXRCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgbm9vcCBmcm9tICdub29wMydcbiJdfQ==`;
+const NOOP_EXPECTED = `import * as noop from "../../node_modules/noop3/index.js";`;
 
-const BABEL_EXPECTED = `import * as babel from "/node_modules/@babel/core/lib/index.js";
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjb3BlZC1ucG0tcGFja2FnZSJdLCJuYW1lcyI6WyJiYWJlbCJdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxLQUFLQSxLQUFaLE1BQXVCLHdDQUF2QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIGJhYmVsIGZyb20gJ0BiYWJlbC9jb3JlJyJdfQ==`;
+const BABEL_EXPECTED = `import * as babel from "/node_modules/@babel/core/lib/index.js";`;
 
 beforeAll(async done => {
 	app.use('*', (req, res, next) => {
